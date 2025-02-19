@@ -15,3 +15,20 @@ model Expense {
     description String?
     createdAt   DateTime @default(now())
 }
+
+model Income {
+    id          String   @id @default(uuid())
+    date        String
+    source      String
+    amount      Float
+    description String?
+    createdAt   DateTime @default(now())
+}
+
+model Budget {
+    id          String   @id @default(uuid())
+    category    String
+    limit       Float
+    period      String   
+    createdAt   DateTime @default(now())
+}
