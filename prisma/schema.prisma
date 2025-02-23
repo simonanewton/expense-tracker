@@ -28,7 +28,7 @@ model Income {
 model Budget {
     id          String   @id @default(uuid())
     category    String
-    limit       Float
+    limit       Int
     period      String   
     createdAt   DateTime @default(now())
 }
