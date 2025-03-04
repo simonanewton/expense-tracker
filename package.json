@@ -2,19 +2,36 @@
     "name": "expense-tracker",
     "version": "0.1.0",
     "prisma": {
+        "schema": "./prisma/schema.prisma",
         "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
     },
     "private": true,
     "scripts": {
         "dev": "next dev --turbopack",
+        "lint": "next lint",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint"
+        "start:prod": "npm run prisma:prod:migrate && npm run prisma:prod:seed && node server.js",
+
+        "compose:dev:build": "docker compose -f docker-compose.dev.yml build",
+        "compose:dev:up": "docker compose -f docker-compose.dev.yml up -d",
+        
+        "compose:prod:build": "docker compose -f docker-compose.prod.yml build",
+        "compose:prod:up": "docker compose -f docker-compose.prod.yml up",
+
+        "prisma:dev:generate": "docker exec -it expense-tracker-development npx prisma generate",
+        "prisma:dev:migrate": "docker exec -it expense-tracker-development npx prisma migrate dev",
+        "prisma:dev:seed": "docker exec -it expense-tracker-development npx prisma db seed",
+        "prisma:dev:studio": "docker exec -it expense-tracker-development npx prisma studio",
+
+        "prisma:prod:generate": "npx prisma generate",
+        "prisma:prod:migrate": "npx prisma migrate deploy",
+        "prisma:prod:seed": "npx prisma db seed"
     },
     "dependencies": {
         "@apollo/server": "^4.11.3",
         "@as-integrations/next": "^3.2.0",
-        "@prisma/client": "^6.3.1",
+        "@prisma/client": "^6.4.1",
         "graphql": "^16.10.0",
         "graphql-tag": "^2.12.6",
         "next": "15.1.7",
@@ -30,7 +47,7 @@
         "@types/react-dom": "^19",
         "eslint": "^9",
         "eslint-config-next": "15.1.7",
-        "prisma": "^6.3.1",
+        "prisma": "^6.4.1",
         "ts-node": "^10.9.2",
         "typescript": "^5"
     }

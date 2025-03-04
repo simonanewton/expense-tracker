@@ -12,6 +12,7 @@ interface Context {
 const server = new ApolloServer<Context>({
     typeDefs,
     resolvers,
+    introspection: true,
     formatError: formatGraphQLError
 });
 

@@ -1,13 +1,13 @@
 services:
   app:
-    container_name: expense-tracker-container
+    container_name: expense-tracker-production
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.prod
     ports:
       - "3000:3000"
     env_file:
-      - .env
+      - .env.production
     environment:
       - NODE_ENV=production
     restart: always
@@ -22,7 +22,7 @@ services:
 
   db:
     image: postgres:15-alpine
-    container_name: postgres_db
+    container_name: postgres_db_prod
     env_file:
       - .env
     ports:
@@ -32,7 +32,7 @@ services:
       POSTGRES_PASSWORD: mypassword
       POSTGRES_DB: mydatabase
     volumes:
-      - pg_data:/var/lib/postgresql/data
+      - pg_data_prod:/var/lib/postgresql/data
     restart: always
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U myuser -d mydatabase"]
@@ -41,4 +41,4 @@ services:
       retries: 3
 
 volumes:
-  pg_data:
+  pg_data_prod:
