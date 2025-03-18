@@ -11,6 +11,7 @@
     "lint": "next lint",
     "test": "jest",
     "test:watch": "jest --watch",
+    "test:dev": "docker exec -it expense-tracker-development npm test",
     "build": "next build",
     "start": "next start",
     "start:prod": "npm run prisma:prod:migrate && npm run prisma:prod:seed && node server.js",
