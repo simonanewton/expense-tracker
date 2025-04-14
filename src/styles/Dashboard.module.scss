@@ -1,0 +1,319 @@
+@use '@/styles/globals.scss' as *;
+
+@mixin box {
+  border: solid;
+  border-color: darkslategray;
+  border-radius: 0.3rem;
+  border-width: thin;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+@mixin boxHeader {
+  // @include flexIcon;
+  background-color: #DBE2E6;
+  padding: 0.7rem 1rem;
+  border-bottom: thin solid black;
+}
+
+@mixin flexIcon {
+  display: flex;
+  align-items: center;
+
+  :first-child {
+    padding-right: 0.8rem;
+  }
+}
+
+@mixin displaySuccess {
+  border-radius: 2rem;
+  background-color: rgba(9, 174, 122, 0.12);
+  color: green;
+  padding: 0.2rem 0.9rem 0.2rem 0.7rem;
+}
+
+@mixin displayDanger {
+  border-radius: 2rem;
+  background-color: rgba(174, 9, 20, 0.12);
+  color: red;
+  padding: 0.2rem 0.9rem 0.2rem 0.7rem;
+}
+
+@mixin displayPrimary {
+  border-radius: 2rem;
+  background-color: rgba(20, 9, 174, 0.1);
+  color: blue;
+  padding: 0.2rem 0.9rem 0.2rem 0.7rem;
+}
+
+.container {
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.siteHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+
+  background-color: $global-green;
+  color: $global-white;
+
+  .logo {
+    @include flexIcon;
+  }
+
+  .logo:hover {
+    filter: brightness(85%) !important;
+  }
+}
+
+.account {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-right: 1rem;
+
+  div {
+    @include flexIcon;
+
+    border: solid;
+    border-color: $global-white;
+    border-radius: 0.3rem;
+    border-width: thin;
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+    padding: 0.3rem 0.7rem;
+    font-weight: bold;
+  }
+
+  div:hover {
+    cursor: pointer;
+    background-color: $global-white;
+    color: $global-green;
+    // box-shadow: inset 0 0 10em 10em rgba(0, 0, 0, 0.08);
+  }
+}
+
+.dashboard {
+  flex-grow: 1;
+  min-height: 0;
+
+  display: flex;
+}
+
+.sideNav {
+  width: 15%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  border-top: solid;
+  border-color: $global-white;
+  background-color: $global-green;
+  color: $global-white;
+
+  .navItem {
+    @include flexIcon;
+
+    border-bottom: solid;
+    border-color: $global-white;
+
+    padding: 1.5rem 1rem;
+    font-size: 1.05rem;
+    font-weight: bold;
+  }
+
+  .navItem:last-child {
+    border-bottom: none;
+    border-top: solid;
+    border-color: $global-white;
+
+    margin-top: auto;
+  }
+
+  .navItem:hover {
+    cursor: pointer;
+    box-shadow: inset 0 0 10em 10em rgba(0, 0, 0, 0.2);
+  }
+}
+
+.home {
+  min-height: 0;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 1.5rem 2rem;
+
+  .homeHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 1.2rem;
+
+    div:first-child {
+      @include flexIcon;
+    }
+  }
+}
+
+.cards {
+  flex-grow: 1;
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.stats>div,
+.charts>div,
+.history {
+  @include box;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+
+  div {
+    @include flexIcon;
+    padding: 1rem;
+
+    .expensesChange {
+      @include flexIcon;
+      @include displaySuccess;
+      margin-left: auto;
+    }
+
+    .incomeChange {
+      @include flexIcon;
+      @include displayDanger;
+      margin-left: auto;
+    }
+
+    .netBalance {
+      @include flexIcon;
+      @include displaySuccess;
+      margin-left: auto;
+    }
+  }
+}
+
+.charts {
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+  gap: 1.5rem;
+
+  div>header {
+    @include flexIcon;
+    @include boxHeader;
+    // background-color: #DBE2E6;
+    // padding: 0.7rem 1rem;
+  }
+}
+
+.breakdown {
+  div {
+    padding: 1rem;
+  }
+}
+
+.summary {
+  .summaryStat {
+    display: flex;
+    align-items: center;
+
+    :first-child {
+      padding-right: 0.7rem;
+    }
+
+    h4:last-child {
+      @include displayPrimary;
+      margin-left: auto !important;
+    }
+
+    border-bottom: solid;
+    border-color: lightgray;
+    border-width: thin;
+    padding: 0.9rem 0.8rem;
+    text-wrap: nowrap;
+  }
+}
+
+.history {
+  flex-grow: 1;
+  min-height: 0;
+  overflow: auto;
+  // -ms-overflow-style: none;
+  // scrollbar-width: none;
+
+  header {
+    @include flexIcon;
+    @include boxHeader;
+    // background-color: #DBE2E6;
+    // padding: 0.7rem 1rem;
+    // border-bottom: thin solid black;
+  }
+}
+
+.historyList {
+  overflow-y: auto;
+  // -ms-overflow-style: none;
+  // scrollbar-width: none;
+
+  display: grid;
+}
+
+.transactionsHeader {
+  font-weight: bold;
+}
+
+.transactionsHeader,
+.transaction {
+  display: grid;
+  grid-template-columns: 7% 8% 9% 1fr;
+  grid-auto-rows: 1fr;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+
+  text-align: center;
+
+  p {
+    border-right: solid;
+    border-width: thin;
+    padding: 0.7rem 1.2rem;
+  }
+
+  p:first-child {
+    padding-right: 1rem;
+    font-weight: bold;
+  }
+
+  p:last-child {
+    overflow-x: auto;
+    white-space: nowrap;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    border-right: none;
+
+    text-align: left !important;
+  }
+
+  p:last-child::-webkit-scrollbar {
+    display: none;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}

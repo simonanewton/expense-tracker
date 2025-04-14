@@ -45,7 +45,7 @@ const fakeData = (): ExpenseData => {
         },
         {
             weight: 2,
-            value: "Health & Wellness"
+            value: "Health"
         },
         {
             weight: 2,
