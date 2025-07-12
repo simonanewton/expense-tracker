@@ -11,7 +11,7 @@
 @mixin boxHeader {
   // @include flexIcon;
   background-color: #DBE2E6;
-  padding: 0.7rem 1rem;
+  padding: 0.6rem 1rem;
   border-bottom: thin solid black;
 }
 
@@ -56,25 +56,25 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 0.6rem 1rem;
 
   background-color: $global-green;
   color: $global-white;
+}
 
-  .logo {
-    @include flexIcon;
-  }
+.logo {
+  @include flexIcon;
+}
 
-  .logo:hover {
-    filter: brightness(85%) !important;
-  }
+.logo:hover {
+  filter: brightness(85%) !important;
 }
 
 .account {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding-right: 1rem;
+  padding-right: 0.7rem;
 
   div {
     @include flexIcon;
@@ -85,8 +85,9 @@
     border-width: thin;
     box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 
-    padding: 0.3rem 0.7rem;
+    padding: 0.4rem 0.7rem;
     font-weight: bold;
+    font-size: 0.95rem;
   }
 
   div:hover {
@@ -115,51 +116,50 @@
   border-color: $global-white;
   background-color: $global-green;
   color: $global-white;
+}
 
-  .navItem {
-    @include flexIcon;
+.navItem {
+  @include flexIcon;
 
-    border-bottom: solid;
-    border-color: $global-white;
+  border-bottom: solid;
+  border-color: $global-white;
 
-    padding: 1.5rem 1rem;
-    font-size: 1.05rem;
-    font-weight: bold;
-  }
+  padding: 1.5rem 1rem;
+  font-size: 1.05rem;
+  font-weight: bold;
+}
 
-  .navItem:last-child {
-    border-bottom: none;
-    border-top: solid;
-    border-color: $global-white;
+.navItem:last-child {
+  border-bottom: none;
+  border-top: solid;
+  border-color: $global-white;
 
-    margin-top: auto;
-  }
+  margin-top: auto;
+}
 
-  .navItem:hover {
-    cursor: pointer;
-    box-shadow: inset 0 0 10em 10em rgba(0, 0, 0, 0.2);
-  }
+.navItem:hover {
+  cursor: pointer;
+  box-shadow: inset 0 0 10em 10em rgba(0, 0, 0, 0.2);
 }
 
 .home {
-  min-height: 0;
-  width: 100%;
-
   display: flex;
   flex-direction: column;
 
-  padding: 1.5rem 2rem;
+  min-height: 0;
+  width: 100%;
+  padding: 1rem 1.7rem;
+}
 
-  .homeHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.homeHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    margin-bottom: 1.2rem;
+  margin-bottom: 0.8rem;
 
-    div:first-child {
-      @include flexIcon;
-    }
+  div:first-child {
+    @include flexIcon;
   }
 }
 
@@ -169,7 +169,7 @@
 
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 0.8rem;
 }
 
 .stats>div,
@@ -185,66 +185,86 @@
 
   div {
     @include flexIcon;
-    padding: 1rem;
+    padding: 0.8rem 1rem;
+
+    .expensesChange,
+    .incomeChange,
+    .netBalance {
+      @include flexIcon;
+      margin-left: auto
+    }
 
     .expensesChange {
-      @include flexIcon;
       @include displaySuccess;
-      margin-left: auto;
     }
 
     .incomeChange {
-      @include flexIcon;
       @include displayDanger;
-      margin-left: auto;
     }
 
     .netBalance {
-      @include flexIcon;
       @include displaySuccess;
-      margin-left: auto;
     }
   }
 }
 
 .charts {
-  display: grid;
-  grid-template-columns: 5fr 2fr;
+  display: flex;
   gap: 1.5rem;
 
   div>header {
     @include flexIcon;
     @include boxHeader;
-    // background-color: #DBE2E6;
-    // padding: 0.7rem 1rem;
   }
 }
 
 .breakdown {
-  div {
-    padding: 1rem;
+  flex: 5;
+}
+
+.pieChart {
+  padding: 1rem;
+  height: 280px;
+  width: auto;
+
+  display: flex;
+  justify-content: center;
+
+  canvas {
+    flex: 1;
   }
 }
 
 .summary {
-  .summaryStat {
-    display: flex;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+}
 
-    :first-child {
-      padding-right: 0.7rem;
-    }
+.summaryList {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
 
-    h4:last-child {
-      @include displayPrimary;
-      margin-left: auto !important;
-    }
+.summaryStat {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
 
-    border-bottom: solid;
-    border-color: lightgray;
-    border-width: thin;
-    padding: 0.9rem 0.8rem;
-    text-wrap: nowrap;
+  border-bottom: solid;
+  border-color: lightgray;
+  border-width: thin;
+  padding: 0.9rem 0.8rem;
+  text-wrap: nowrap;
+
+  :first-child {
+    padding-right: 0.7rem;
+  }
+
+  h4:last-child {
+    @include displayPrimary;
+    margin-left: auto !important;
   }
 }
 
@@ -258,9 +278,6 @@
   header {
     @include flexIcon;
     @include boxHeader;
-    // background-color: #DBE2E6;
-    // padding: 0.7rem 1rem;
-    // border-bottom: thin solid black;
   }
 }
 
@@ -270,26 +287,24 @@
   // scrollbar-width: none;
 
   display: grid;
+  grid-template-rows: auto;
+
+  :first-child {
+    font-weight: bold;
+  }
 }
 
-.transactionsHeader {
-  font-weight: bold;
-}
-
-.transactionsHeader,
 .transaction {
   display: grid;
-  grid-template-columns: 7% 8% 9% 1fr;
-  grid-auto-rows: 1fr;
-  align-items: center;
-  border-bottom: 1px solid lightgray;
+  grid-template-columns: 9% 12% 11% 1fr;
 
+  border-bottom: 1px solid lightgray;
   text-align: center;
 
   p {
     border-right: solid;
     border-width: thin;
-    padding: 0.7rem 1.2rem;
+    padding: 0.55rem 1.2rem;
   }
 
   p:first-child {
@@ -311,9 +326,5 @@
 
   p:last-child::-webkit-scrollbar {
     display: none;
-  }
-
-  &:last-child {
-    border-bottom: none;
   }
 }
