@@ -26,15 +26,15 @@
 
 @mixin displaySuccess {
   border-radius: 2rem;
-  background-color: rgba(9, 174, 122, 0.12);
-  color: green;
+  background-color: #ECF8EC;
+  color: #004200;
   padding: 0.2rem 0.9rem 0.2rem 0.7rem;
 }
 
 @mixin displayDanger {
   border-radius: 2rem;
-  background-color: rgba(174, 9, 20, 0.12);
-  color: red;
+  background-color: #F7ECEC;
+  color: #A30000;
   padding: 0.2rem 0.9rem 0.2rem 0.7rem;
 }
 
