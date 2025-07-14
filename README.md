@@ -1,7 +1,7 @@
 # Expense Tracker
 
 <div align="center">
-<img src="./public/site-logo.png" alt="Expense Tracker Logo" align="center" width="75%" />
+<img src="./public/site-logo.png" alt="Expense Tracker Logo" align="center" width="100%" />
 </div>
 
 ## Description
@@ -32,7 +32,7 @@ and adaptable for creating rulesets and consistency when styling multiple React 
 ## Preview
 
 <div align="center">
-<img src="./public/site-preview.png" alt="Expense Tracker Webiste Preview" width="85%" />
+<img src="./public/site-preview.png" alt="Expense Tracker Webiste Preview" width="100%" />
 </div>
 
 ## Installation
