@@ -1,0 +1,65 @@
+@use '@/styles/globals.scss' as *;
+@use '@/styles/mixins.scss' as *;
+
+.history {
+  @include box;
+
+  flex-grow: 1;
+  min-height: 0;
+  overflow: auto;
+  // -ms-overflow-style: none;
+  // scrollbar-width: none;
+
+  header {
+    @include flexIcon;
+    @include boxHeader;
+  }
+}
+
+.historyList {
+  overflow-y: auto;
+  // -ms-overflow-style: none;
+  // scrollbar-width: none;
+
+  display: grid;
+  grid-template-rows: auto;
+
+  :first-child {
+    font-weight: bold;
+  }
+}
+
+.transaction {
+  display: grid;
+  grid-template-columns: 9% 12% 11% 1fr;
+
+  border-bottom: 1px solid lightgray;
+  text-align: center;
+
+  p {
+    border-right: solid;
+    border-width: thin;
+    padding: 0.55rem 1.2rem;
+  }
+
+  p:first-child {
+    padding-right: 1rem;
+    font-weight: bold;
+  }
+
+  p:last-child {
+    overflow-x: auto;
+    white-space: nowrap;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    border-right: none;
+
+    text-align: left !important;
+  }
+
+  p:last-child::-webkit-scrollbar {
+    display: none;
+  }
+}

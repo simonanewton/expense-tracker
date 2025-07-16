@@ -1,0 +1,36 @@
+@use '@/styles/globals.scss' as *;
+@use '@/styles/mixins.scss' as *;
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+
+  >div {
+    @include box;
+  }
+
+  div {
+    @include flexIcon;
+    padding: 0.8rem 1rem;
+
+    .expensesChange,
+    .incomeChange,
+    .netBalance {
+      @include flexIcon;
+      margin-left: auto
+    }
+
+    .expensesChange {
+      @include displaySuccess;
+    }
+
+    .incomeChange {
+      @include displayDanger;
+    }
+
+    .netBalance {
+      @include displaySuccess;
+    }
+  }
+}

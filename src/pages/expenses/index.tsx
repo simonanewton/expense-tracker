@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import SiteHeader from "@/components/siteHeader";
-import SideNav from "@/components/sideNav";
+import SiteHeader from "@/components/SiteHeader/SiteHeader";
+import SideNav from "@/components/SiteNav/SideNav";
 import Link from 'next/link';
 import styles from "@/styles/Dashboard.module.scss";
 

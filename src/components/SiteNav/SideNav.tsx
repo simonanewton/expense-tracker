@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouseChimney, faCreditCard, faVault, faChartPie, faGear, faChartColumn } from "@fortawesome/free-solid-svg-icons";
-import Link from 'next/link'
-import styles from "@/styles/Dashboard.module.scss";
+// import Link from 'next/link';
+import styles from "@/components/SiteNav/SideNav.module.scss";
 
 const SideNav = () => {
     return (

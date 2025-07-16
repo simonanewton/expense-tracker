@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightToBracket, faUser } from "@fortawesome/free-solid-svg-icons";
 import { faPenToSquare } from "@fortawesome/free-regular-svg-icons";
 import Link from 'next/link';
-import styles from "@/styles/Dashboard.module.scss";
+import styles from "@/components/SiteHeader/SiteHeader.module.scss";
 
 const SiteHeader = () => {
   return (

@@ -1,0 +1,48 @@
+@use '@/styles/globals.scss' as *;
+@use '@/styles/mixins.scss' as *;
+
+.siteHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 1rem;
+
+  background-color: $global-green;
+  color: $global-white;
+}
+
+.logo {
+  @include flexIcon;
+}
+
+.logo:hover {
+  filter: brightness(85%) !important;
+}
+
+.account {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-right: 0.7rem;
+
+  div {
+    @include flexIcon;
+
+    border: solid;
+    border-color: $global-white;
+    border-radius: 0.3rem;
+    border-width: thin;
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+    padding: 0.4rem 0.7rem;
+    font-weight: bold;
+    font-size: 0.95rem;
+  }
+
+  div:hover {
+    cursor: pointer;
+    background-color: $global-white;
+    color: $global-green;
+    // box-shadow: inset 0 0 10em 10em rgba(0, 0, 0, 0.08);
+  }
+}

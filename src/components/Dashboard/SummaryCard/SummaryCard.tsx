@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChartLine, faFileLines, faListOl } from "@fortawesome/free-solid-svg-icons";
 import { faCircleUser } from "@fortawesome/free-regular-svg-icons";
 import { faMoneyBill1 } from "@fortawesome/free-regular-svg-icons/faMoneyBill1";
-import styles from "@/styles/Dashboard.module.scss";
+import styles from "@/components/Dashboard/SummaryCard/SummaryCard.module.scss";
 
 const SummaryCard = () => {
   return (

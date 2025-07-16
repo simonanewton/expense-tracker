@@ -1,11 +1,10 @@
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import SiteHeader from "@/components/siteHeader";
-import SideNav from "@/components/sideNav";
-import PageHeader from "@/components/pageHeader";
-import ChartCard from "@/components/Dashboard/chartCard";
-import SummaryCard from "@/components/Dashboard/summaryCard";
-import StatsCard from "@/components/Dashboard/statsCard";
-import TransactionCard from "@/components/Dashboard/transactionCard";
+import SiteHeader from "@/components/SiteHeader/SiteHeader";
+import SideNav from "@/components/SiteNav/SideNav";
+import PageHeader from "@/components/PageHeader/PageHeader";
+import ChartCard from "@/components/Dashboard/ChartCard/ChartCard";
+import SummaryCard from "@/components/Dashboard/SummaryCard/SummaryCard";
+import StatsCard from "@/components/Dashboard/StatsCard/StatsCard";
+import TransactionCard from "@/components/Dashboard/TransactionCard/TransactionCard";
 import styles from "@/styles/Dashboard.module.scss";
 
 const Dashboard = () => {
@@ -18,7 +17,7 @@ const Dashboard = () => {
           <PageHeader />
           <div className={styles.cards}>
             <StatsCard />
-            <div className={styles.charts}>
+            <div className={styles.data}>
               <ChartCard />
               <SummaryCard />
             </div>

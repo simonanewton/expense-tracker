@@ -1,0 +1,35 @@
+@use '@/styles/globals.scss' as *;
+@use '@/styles/mixins.scss' as *;
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+}
+
+.summaryList {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.summaryStat {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+
+  border-bottom: solid;
+  border-color: lightgray;
+  border-width: thin;
+  padding: 0.9rem 0.8rem;
+  text-wrap: nowrap;
+
+  :first-child {
+    padding-right: 0.7rem;
+  }
+
+  h4:last-child {
+    @include displayPrimary;
+    margin-left: auto !important;
+  }
+}

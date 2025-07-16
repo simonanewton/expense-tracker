@@ -1,0 +1,39 @@
+@use '@/styles/globals.scss' as *;
+@use '@/styles/mixins.scss' as *;
+
+.sideNav {
+  width: 15%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  border-top: solid;
+  border-color: $global-white;
+  background-color: $global-green;
+  color: $global-white;
+}
+
+.navItem {
+  @include flexIcon;
+
+  border-bottom: solid;
+  border-color: $global-white;
+
+  padding: 1.5rem 1rem;
+  font-size: 1.05rem;
+  font-weight: bold;
+}
+
+.navItem:last-child {
+  border-bottom: none;
+  border-top: solid;
+  border-color: $global-white;
+
+  margin-top: auto;
+}
+
+.navItem:hover {
+  cursor: pointer;
+  box-shadow: inset 0 0 10em 10em rgba(0, 0, 0, 0.2);
+}
