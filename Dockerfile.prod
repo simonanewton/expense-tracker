@@ -18,7 +18,7 @@ COPY --from=deps /app/package-lock.json ./package-lock.json
 COPY . .
 
 # generate prisma postgresql database
-RUN npx prisma generate
+RUN npx prisma generate  --no-engine
 
 # create application build
 RUN npm run build
