@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faList } from "@fortawesome/free-solid-svg-icons";
-import styles from "@/components/Dashboard/TransactionCard/TransactionCard.module.scss";
+import styles from "./TransactionCard.module.scss";
 
 const TransactionTable = () => {
   return (

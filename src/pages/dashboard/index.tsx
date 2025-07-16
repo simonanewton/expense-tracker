@@ -5,7 +5,7 @@ import ChartCard from "@/components/Dashboard/ChartCard/ChartCard";
 import SummaryCard from "@/components/Dashboard/SummaryCard/SummaryCard";
 import StatsCard from "@/components/Dashboard/StatsCard/StatsCard";
 import TransactionCard from "@/components/Dashboard/TransactionCard/TransactionCard";
-import styles from "@/styles/Dashboard.module.scss";
+import styles from "./Dashboard.module.scss";
 
 const Dashboard = () => {
   return (

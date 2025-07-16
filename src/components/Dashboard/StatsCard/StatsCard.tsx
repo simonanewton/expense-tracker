@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDollarSign, faCircleDollarToSlot, faScaleBalanced, faArrowUp, faArrowDown, faPlus} from "@fortawesome/free-solid-svg-icons";
-import styles from "@/components/Dashboard/StatsCard/StatsCard.module.scss";
+import styles from "./StatsCard.module.scss";
 
 const StatsCard = () => {
   return (

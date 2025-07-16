@@ -13,7 +13,7 @@
     "test:watch": "jest --watch",
     "test:dev": "docker exec -it expense-tracker-development npm test",
     "build": "next build",
-    "start": "next start",
+    "start": "node .next/standalone/server.js",
     "start:prod": "npm run prisma:prod:migrate && npm run prisma:prod:seed && node server.js",
     "compose:dev:build": "docker compose -f docker-compose.dev.yml build --no-cache",
     "compose:dev:up": "docker compose -f docker-compose.dev.yml up -d",
